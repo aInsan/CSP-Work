@@ -4,26 +4,21 @@
 using namespace std;
 
 int main() {
-    string password = "password123";
-    string input;
-    int attempts = 3;
+    string correctPass = "AmongusSUS";
+    string pass;
 
-    while (attempts > 0) {
+    for (int i = 0; i < 3; i++) {
         cout << "Enter the password: ";
-        cin >> input;
+        cin >> pass;
 
-        if (input == password) {
+        if (pass == correctPass) {
             cout << "Welcome!" << endl;
             break;
+        } else if (i < 2){
+            cout << "Incorrect! You have " << 2 - i << " attempts left." << endl;
         } else {
-            attempts--;
-            cout << "Incorrect password. You have " << attempts << " attempts left." << endl;
+            cout << "You have exceeded the maximum number of attempts. Closed Program." << endl;
         }
     }
-
-    if (attempts == 0) {
-        cout << "You have exceeded the maximum number of attempts. Program closing." << endl;
-    }
-
     return 0;
 }

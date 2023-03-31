@@ -4,19 +4,19 @@
 using namespace std;
 
 int main() {
-    string str;
-    char ch;
+    string word;
+    char letter;
 
     cout << "Enter a string: ";
-    cin >> str;
+    cin >> word;
 
     cout << "Enter a character to search for: ";
-    cin >> ch;
+    cin >> letter;
 
-    cout << "Positions of '" << ch << "' in the string: ";
+    cout << "Positions of '" << letter << "' in the string: ";
 
-    for (int i = 0; i < str.length(); i++) {
-        if (str[i] == ch) {
+    for (int i = 0; i < word.length(); i++) {
+        if (word[i] == letter) {
             cout << i << ", ";
         }
     }
