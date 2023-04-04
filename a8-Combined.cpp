@@ -6,10 +6,12 @@
 using namespace std;
 
 void helloWorld() {
+    //cool hello world program!
     cout << "Hello World!\n";
 }
 
 void helloName() {
+    //cool hello world program!
     char name[64];
     cout << "What is your name:\n";
     cin >> name;
@@ -18,50 +20,46 @@ void helloName() {
 
 void maths() {
     float x, y;
-    cout << "Enter the first number: "; cin >> x;
-    cout << "Enter the second number: "; cin >> y;
+    cout << "Primero numero por favor:"; cin >> x;
+    cout << "La deuxieme nombre maintenant:"; cin >> y;
     cout << x+y << endl << x-y << endl;
     cout << x*y << endl << x/y << endl;
     cout << pow(x,y) << endl << fmod(x,y) << endl;
 }
 
 void password() {
-    string password = "password123";
-    string input;
-    int attempts = 3;
+    string correctPass = "AmongusSUS";
+    string pass;
 
-    while (attempts > 0) {
+    for (int i = 0; i < 3; i++) {
         cout << "Enter the password: ";
-        cin >> input;
+        cin >> pass;
 
-        if (input == password) {
+        if (pass == correctPass) {
             cout << "Welcome!" << endl;
             break;
+        } else if (i < 2){
+            cout << "Incorrect! You have " << 2 - i << " attempts left." << endl;
         } else {
-            attempts--;
-            cout << "Incorrect password. You have " << attempts << " attempts left." << endl;
+            cout << "You have exceeded the maximum number of attempts. Closed Program." << endl;
         }
-    }
-
-    if (attempts == 0) {
-        cout << "You have exceeded the maximum number of attempts. Program closing." << endl;
     }
 }
 
 void search() {
-    string str;
-    char ch;
+    string word;
+    char letter;
 
     cout << "Enter a string: ";
-    cin >> str;
+    cin >> word;
 
     cout << "Enter a character to search for: ";
-    cin >> ch;
+    cin >> letter;
 
-    cout << "Positions of '" << ch << "' in the string: ";
+    cout << "Positions of '" << letter << "' in the string: ";
 
-    for (int i = 0; i < str.length(); i++) {
-        if (str[i] == ch) {
+    for (int i = 0; i < word.length(); i++) {
+        if (word[i] == letter) {
             cout << i << ", ";
         }
     }
